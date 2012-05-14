@@ -1,2 +1,2 @@
-Schroeter-Mobile
+Schröter-Mobile
 ================
