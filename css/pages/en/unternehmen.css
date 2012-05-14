@@ -1,0 +1,19 @@
+/*Unternehmen*/
+.buttons {
+	padding-left: 40px;
+	position: absolute;
+	width: 468px; /* eigentlich 508px - wegen 40px padding! */
+	height: 66px;
+	bottom: 105px;
+	left: -2px;
+	background-image:url("../../../images/en/unternehmen/borg.png");
+	background-repeat: no-repeat;
+	text-transform: uppercase;
+	line-height: 66px;
+	font-size: 20px;
+}
+#international {
+	background-image:url("../../../images/en/unternehmen/inter.png");
+	right: -11px;
+	left: auto;
+}	

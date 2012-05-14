@@ -1,0 +1,48 @@
+/*On iPhones:*/
+#wrongOrientation {
+	line-height: 40px;
+}
+body {
+	width: 320px;
+	height: 100%;
+	background-size: 320px auto;
+	background-position: center 0;
+}
+
+#logo {
+	width: 70px;
+	top: 25px;
+	right: 10px;
+}
+
+.info {
+	position: absolute;
+	right: 10px;
+	top: 0;
+	margin: 0 !important;
+}
+
+.lang {
+	position: absolute;
+	right: 90px;
+	top: 0;
+}
+
+#topNav {
+	height: 20px;
+	line-height: 20px;
+	overflow: hidden;
+	background-image: url("../imagesMobile/static/footer.png");
+}
+
+#topNav img {
+	margin-top: -10px;
+}
+
+.backArrow {
+	width: 19px;
+	height: 19px;
+	top: 0;
+	left: 7px;
+	background-image:url("../imagesMobile/static/backArrow.png");
+}

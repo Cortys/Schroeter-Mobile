@@ -1,0 +1,103 @@
+/*CSS for the Products*/
+#overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(31, 35, 46, 0.9);
+	display: none;
+}
+#overlay > div {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	text-shadow: 0 2px 5px #000000;
+	font-size: 14px;
+	margin: 0;
+}
+#overlay > div > div {
+	margin: 15px;
+}
+#overlay .cat {
+	text-transform: uppercase;
+	margin-top: 20px;
+}
+#overlay .cat span {
+	text-transform: lowercase;
+	font-style: italic;
+}
+#overlay .mH {
+	font-size: 17px;
+	font-weight:bold;
+}
+#slide {	
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	overflow: auto;
+	display: none;
+}
+#folias {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	overflow: hidden;
+}
+#folias div {
+	display: inline-block;
+	height: 100%;
+	text-align: center;
+	overflow: hidden;
+}
+#folias div img {
+	margin: 20px 0 0 0;
+	padding: 0;
+	height: 100%;
+}
+#info {
+	position: absolute;
+	width: 320px;
+	height: 323px;
+	left: -1px;
+	bottom: -235px;
+	background-image:url("../../imagesMobile/pages/prBg.png");
+	background-repeat: no-repeat;
+	overflow: hidden;
+}
+.head {
+	position: absolute;
+	top: -10px;
+	left: 15px;
+}
+.desc {
+	position: absolute;
+	left: 15px;
+	top: 40px;
+	padding-right: 15px;
+	font-size: 14px;
+	line-height: 140%;
+	padding-top:15px;
+}
+.toggler {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+}
+.actions {
+	position: absolute;
+	left: 15px;
+	bottom: 25px;
+}
+
+.pr_datenblatt {
+	font-size: 12px;
+	font-weight: bold;
+	margin-bottom: 0;
+	text-transform: uppercase;
+}

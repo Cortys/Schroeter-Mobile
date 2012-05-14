@@ -1,0 +1,43 @@
+/*Meeting Point*/
+#title {
+	position: absolute;
+	top: 80px;
+	left: 60px;
+	display: none;
+}
+
+#topNav, #subNav, #logo, #title {
+	z-index: 11;
+}
+
+#magazin {
+	position: absolute;
+	bottom: 170px;
+	left: 120px;
+	z-index: 0;
+	-webkit-transform-style: preserve-3d;
+	-webkit-transform: translate3d(0,0,0) scale(0.55);
+}
+#tray {
+	z-index: 0;
+}
+
+#magazin img {
+	-webkit-box-shadow: 0 0 10px #000000;
+	-moz-box-shadow: 0 0 10px #000000;
+	box-shadow: 0 0 10px #000000;
+}
+
+#options {
+	position: absolute;
+	right: 10px;
+	bottom: 50px;
+	z-index: 10;
+	text-align: left;
+}
+
+#buttons {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+}

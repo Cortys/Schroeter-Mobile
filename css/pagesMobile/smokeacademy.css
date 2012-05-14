@@ -1,0 +1,39 @@
+/*Smokeacademy*/
+#smoke {
+	position: absolute;
+	top: 20px;
+	left: 0;
+	width: 100%;
+	overflow: hidden;
+}
+#title {
+	position: absolute;
+	top: 37px;
+	left: 10px;
+}
+#text {
+	position: relative;
+	color: #2c313a;
+	line-height: 150%;
+	padding: 350px 10px 20px;
+}
+#text span {
+	font-weight: bold;
+	text-transform: uppercase;
+	margin-bottom:10px;
+}
+a { 
+	text-decoration:none;
+	color: #2C313A;
+}
+#heft {
+	position: absolute;
+	top: 150px;
+	left: 10px;
+	width: 140px;
+}
+#options {
+	position: absolute;
+	top: 220px;
+	left: 160px;
+}

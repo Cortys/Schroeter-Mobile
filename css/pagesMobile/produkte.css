@@ -1,0 +1,28 @@
+/*Produkte*/
+#title {
+	position: absolute;
+	top: 35px;
+	left: 10px;
+}
+
+#groups {
+	position: absolute;
+	width: 100%;
+	height: 180px;
+	bottom: 50px;
+	left: 0;
+}
+#groups > div > div {
+	width: 159px;
+	height: 36px;
+}
+#groups > div {
+	position: absolute;
+}
+#groups .n0 {
+	left: -4px;
+}
+#groups .n1 {
+	right: 0;
+	margin-top: 36px;
+}

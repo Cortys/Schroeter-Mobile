@@ -1,0 +1,28 @@
+/*Info*/
+#title {
+	position: absolute;
+	top: 68px;
+	left: 60px;
+}
+#loadedPage div {
+	color: #2c313a;
+}
+#version {
+	position: absolute;
+	text-transform: uppercase;
+	right: 75px;
+	bottom: 80px;
+	font-weight: bold;
+	font-size: 15px;
+}
+#info {
+	position: absolute;
+	bottom: 80px;
+	left: 60px;
+	width: 390px;
+	line-height: 150%;
+}
+a { 
+	text-decoration:none;
+	color: #2C313A;
+	}

@@ -1,0 +1,50 @@
+/*Smokeacadey*/
+#title {
+	position: absolute;
+	top: 68px;
+	left: 60px;
+}
+
+#heft {
+	position: absolute;
+	left: 60px;
+	bottom: 105px;
+}
+
+#text {
+	position: absolute;
+	color: #2c313a;
+	width: 460px;
+	height: 270px;
+	left: 330px;
+	bottom: 205px;
+	line-height:150%;
+	margin-left: 25px;
+}
+
+#text span {
+	font-weight: bold;
+	text-transform: uppercase;
+	margin-bottom:10px;
+}
+
+#options {
+	position: absolute;
+	left: 330px;
+	bottom: 105px;
+	margin-left: 25px;
+}
+
+#options img {
+	margin-right:20px;
+}
+
+a { 
+	text-decoration:none;
+	color: #2C313A;
+}
+
+.ansprechpartner {
+	font-weight:bold;
+	margin-bottom:10px;
+}

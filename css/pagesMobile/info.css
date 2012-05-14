@@ -1,0 +1,26 @@
+/*Info*/
+#title {
+	position: absolute;
+	top: 25px;
+	left: 10px;
+}
+#loadedPage div {
+	color: #2c313a;
+}
+#version {
+	position: absolute;
+	right: 10px;
+	bottom: 50px;
+	font-size: 15px;
+	letter-spacing: -1px;
+}
+#info {
+	position: absolute;
+	top: 130px;
+	left: 10px;
+	width: 390px;
+	line-height: 120%;
+}
+b {
+	font-weight: normal;
+}

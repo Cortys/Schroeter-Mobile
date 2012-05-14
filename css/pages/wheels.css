@@ -1,0 +1,166 @@
+/*SELECT-WHEEL Feature:*/
+#title {
+	position: absolute;
+	top: 68px;
+	left: 60px;
+}
+#selectWheel {
+	position: absolute;
+	width: 447px;
+	height: 387px;
+	bottom: 60px;
+	left: 60px;
+	background-image: url("../../images/pages/wheel.png");
+	background-repeat: no-repeat;
+	overflow: auto;
+}
+#selectWheel #shadow, #selectWheel #area {
+	position: absolute;
+	width: 397px;
+	height: 315px;
+	top: 51px;
+	left: 21px;
+	color: #000000;
+	overflow: hidden;
+}
+#selectWheel #shadow {
+	background-image: url("../../images/pages/wheelShadow.png");
+	background-repeat: no-repeat;
+}
+#area ul {
+	list-style: none;
+	margin:0;
+	padding: 0;
+}
+#area li {
+	height: 60px;
+	text-align: left;
+	padding-left: 30px;
+	margin-bottom: 4px;
+	line-height: 60px;
+	font-size: 22px;
+	text-transform: uppercase;
+	text-shadow:0 1px 1px rgba(255, 255, 255, 0.5);
+	overflow: hidden;
+}
+#area li div:first-child {
+	margin-top: 8px;
+	line-height: 25px;
+}
+#area li div:last-child {
+	line-height: 20px;
+	font-size: 14px;
+	text-transform: none;
+}
+#selectWheel #active {
+	position: absolute;
+	width: 406px;
+	height: 66px;
+	top: 178px;
+	left: 17px;
+	background-image: url("../../images/pages/wheelActive.png");
+	background-repeat: no-repeat;
+}
+#selectWheel img {
+	position: absolute;
+	left: 50px;
+	top: 21px;
+}
+#searchBox {
+	position: absolute;
+	bottom: 460px;
+	left: 60px;
+	width: 447px;
+	height: 55px;
+	background-image: url("../../images/pages/searchBg.png");
+	background-repeat: no-repeat;
+}
+#searchBox input {
+	position: absolute;
+	margin: 0;
+	padding: 0;
+	width: 381px;
+	height: 33px;
+	line-height: 33px;
+	top: 11px;
+	left: 10px;
+	border: none;
+	font-size: 18px;
+	color: #464F5E;
+	padding-left: 40px;
+	background-image: url("../../images/static/zoomer.png");
+	background-repeat: no-repeat;
+	background-position: 7px 1px;
+}
+#searchBox img {
+	position: absolute;
+	top: 11px;
+	right: 20px;
+	display: none;
+}
+#wheelFilter {
+	position: absolute;
+	width: 92px;
+	height: 387px;
+	bottom: 60px;
+	left: 510px;
+}
+#wheelFilter img {
+	opacity: 0.5;
+}
+#wheelFilter .filtered {
+	opacity: 1;
+}
+#wheelErg {
+	position: fixed;
+	width: 319px;
+	height: 389px;
+	bottom: 60px;
+	right: 75px;
+	background-image: url("../../images/pages/wheelErg.png");
+	background-repeat: no-repeat;
+	color: #464F5E;
+	overflow: hidden;
+}
+#ergArea {
+	font-size: 15px;
+	line-height: 130%;
+	margin: 30px;
+}
+#ergArea span {
+	font-weight: bold;
+	text-transform: uppercase;
+	font-size:16px;
+}
+#wheelErg .sendMail {
+	position: absolute;
+	bottom: 15px;
+	right: 20px;
+}
+
+
+#ergArea .email_space {
+	float: left;
+	width: 60px;
+}
+
+#ergArea .tele_space {
+	float: left;
+	width: 38px;
+}
+
+#ergArea .fax_space {
+	float: left;
+	width: 36px;
+}
+
+#ergArea .mobil_space {
+	float: left;
+	width: 27px;
+}
+#ergArea span.typ {
+	float: left;
+	font-weight: normal;
+	text-transform: none;
+	font-size: 15px;	
+}

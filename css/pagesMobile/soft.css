@@ -1,0 +1,39 @@
+/*Software*/
+#smoke {
+	position: absolute;
+	top: 20px;
+	left: 0;
+	width: 100%;
+	overflow: hidden;
+}
+#title {
+	position: absolute;
+	top: 37px;
+	left: 10px;
+}
+#desc {
+	position: relative;
+	color: #2c313a;
+	line-height: 150%;
+	padding: 300px 10px 20px;
+}
+#desc span {
+	font-weight: bold;
+	text-transform: uppercase;
+	margin-bottom:10px;
+}
+a { 
+	text-decoration:none;
+	color: #2C313A;
+}
+#softIcon {
+	position: absolute;
+	top: 150px;
+	left: 10px;
+	width: 100px;
+}
+#func {
+	position: absolute;
+	top: 180px;
+	left: 140px;
+}

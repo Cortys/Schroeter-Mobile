@@ -1,0 +1,34 @@
+/*Software*/
+#title {
+	position: absolute;
+	top: 189px;
+	left: 60px;
+}
+#softIcon {
+	position: absolute;
+	left: 60px;
+	bottom: 275px;
+}
+#desc {
+	position: absolute;
+	left: 200px;
+	bottom: 180px;
+	color: #2c313a;
+	width: 560px;
+	line-height: 150%;
+}
+#func {
+	position: absolute;
+	left: 200px;
+	bottom: 105px;
+}
+
+#func img {
+	margin-right: 20px;
+}
+
+.ansprechpartner {
+	font-weight: bold;
+	margin-bottom: 10px;
+	text-transform: uppercase;
+}

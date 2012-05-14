@@ -1,0 +1,168 @@
+/*SELECT-WHEEL Feature:*/
+#title {
+	position: absolute;
+	top: 37px;
+	left: 7px;
+}
+#selectWheel {
+	position: absolute;
+	width: 219px;
+	height: 200px;
+	bottom: 40px;
+	left: 7px;
+	background-image: url("../../imagesMobile/pages/wheel.png");
+	background-repeat: no-repeat;
+	overflow: hidden;
+}
+#selectWheel #shadow, #selectWheel #area {
+	position: absolute;
+	width: 190px;
+	height: 159px;
+	top: 26px;
+	left: 16px;
+	color: #000000;
+	overflow: hidden;
+}
+#selectWheel #shadow {
+	background-image: url("../../imagesMobile/pages/wheelShadow.png");
+	background-repeat: no-repeat;
+}
+#area ul {
+	list-style: none;
+	margin:0;
+	padding: 0;
+}
+#area li {
+	height: 53px;
+	text-align: left;
+	padding-left: 10px;
+	margin-bottom: 2px;
+	line-height: 53px;
+	font-size: 14px;
+	text-transform: uppercase;
+	text-shadow:0 1px 1px rgba(255, 255, 255, 0.5);
+	overflow: hidden;
+	letter-spacing: -1px;
+}
+#area li div:first-child {
+	margin-top: 10px;
+	line-height: 18px;
+}
+#area li div:last-child {
+	line-height: 14px;
+	font-size: 11px;
+	text-transform: none;
+}
+#selectWheel #active {
+	position: absolute;
+	width: 199px;
+	height: 53px;
+	top: 83px;
+	left: 12px;
+	background-image: url("../../imagesMobile/pages/wheelActive.png");
+	background-repeat: no-repeat;
+}
+#selectWheel img {
+	position: absolute;
+	left: 25px;
+	top: 8px;
+	height: 15px;
+}
+#searchBox {
+	position: absolute;
+	top: 85px;
+	left: 8px;
+	width: 302px;
+	height: 42px;
+	background-image: url("../../imagesMobile/pages/searchBg.png");
+	background-repeat: no-repeat;
+	display: none;
+}
+#wheelFilter {
+	position: absolute;
+	width: 61px;
+	height: 194px;
+	bottom: 40px;
+	right: 10px;
+}
+#wheelFilter img {
+	opacity: 0.5;
+	margin: -3px;
+}
+#wheelFilter .filtered {
+	opacity: 1;
+}
+#wheelErg {
+	position: fixed;
+	width: 304px;
+	height: 159px;
+	bottom: 50px;
+	right: 8px;
+	background-image: url("../../imagesMobile/pages/wheelErg.png");
+	background-repeat: no-repeat;
+	color: #464F5E;
+	overflow: hidden;
+	font-size: 12px;
+	-webkit-transform: translateY(209px);
+}
+#wheelErg.large {
+	background-image: url("../../imagesMobile/pages/wheelErgLarge.png");
+	height: 270px;
+	-webkit-transform: translateY(310px);
+}
+#ergArea {
+	margin-left: 20px;
+	margin-right: 60px;
+	margin-top: 12px;
+	line-height: 130%;
+}
+#ergArea span {
+	font-weight: bold;
+	text-transform: uppercase;
+	font-size: 14px;
+}
+#wheelErg .sendMail {
+	position: absolute;
+	bottom: 10px;
+	right: 10px;
+}
+#wheelErg #ergClose {
+	position: absolute;
+	top: 3px;
+	right: 3px;
+}
+#overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(31, 35, 46, 0.5);
+	display: none;
+}
+
+#ergArea .email_space {
+	float: left;
+	width: 60px;
+}
+
+#ergArea .tele_space {
+	float: left;
+	width: 38px;
+}
+
+#ergArea .fax_space {
+	float: left;
+	width: 36px;
+}
+
+#ergArea .mobil_space {
+	float: left;
+	width: 27px;
+}
+#ergArea span.typ {
+	font-weight: normal;
+	text-transform: none;
+	font-size: 14px;
+	float: left;
+}

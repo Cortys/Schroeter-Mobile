@@ -1,0 +1,14 @@
+/*Unternehmen*/
+.buttons {
+	position: absolute;
+	width: 320px;
+	height: 50px;
+	bottom: 77px;
+	left: 0px;
+	background-image:url("../../../imagesMobile/en/unternehmen/borg.png");
+	background-repeat: no-repeat;
+}
+#international {
+	background-image:url("../../../imagesMobile/en/unternehmen/inter.png");
+	bottom: 40px;
+}
