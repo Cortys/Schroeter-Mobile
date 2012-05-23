@@ -1,34 +1,59 @@
+<script>
+	var state = 1;
+	if(location.search)
+		state = (String(location.search).split("?")[1]).split("=")[1]*1+1;
+	
+	if(state<4)
+		location.search = "renderState="+state;
+</script>
 <?php
 	
-	error_reporting(0);
+	error_reporting(E_ALL);
 	
 	$dir = dirname(__FILE__);
 	
-	$files = scandir($dir);
-	
-	echo count($files)."<br>";
-	
-	$_GET["lang"] = "de";
-	$_GET["phone"] = 0;
-	$_GET["phoneString"] = "";
-	
-	foreach ($files as $key => $craps) {
+	function renderWith($pLang, $pPhone) {
 		
-		$craps = explode(".", $craps);
+		global $_GET;
+		global $dir;
 		
-		echo "$key: ".$craps[0]."-".$craps[1]."<br>";
+		$files = scandir($dir);
 		
-		if($craps[1] != "php" || $craps[0] == "createHTML")
-			continue;
+		$_GET["lang"] = $pLang;
+		$_GET["phone"] = $pPhone;
+		$_GET["phoneString"] = $pPhone?"Mobile":"";
 		
-		ob_start(function($b) {
-			global $craps;
-			file_put_contents($craps[0].".html", $b);
-		});
-		$_GET["page"] = $craps[0];
 		
-		include($craps[0].".php");
+		$pFolder = $pPhone?"mobile":"tablet";
 		
-		ob_end_flush();
+		foreach ($files as $key => $craps) {
+			
+			
+			$craps = explode(".", $craps);
+			
+			if(!isset($craps[1]) || $craps[1] != "php" || $craps[0] == "createHTML")
+				continue;
+			
+			ob_start();
+			$_GET["page"] = $craps[0];
+			
+			include($craps[0].".php");
+			
+			file_put_contents("$pFolder/$pLang/".$craps[0].".html", ob_get_clean());
+			
+			echo "$pFolder/$pLang/".$craps[0].".html<br>";
+		}
+		
+		echo "<h2>Render for $pFolder in $pLang completed!</h2>";
+		
 	}
+	
+	if($_GET["renderState"] == 0)
+		renderWith("de", 0);
+	if($_GET["renderState"] == 1)
+		renderWith("de", 1);
+	if($_GET["renderState"] == 2)
+		renderWith("en", 0);
+	if($_GET["renderState"] == 3)
+		renderWith("en", 1);
 ?>
