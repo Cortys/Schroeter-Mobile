@@ -112,7 +112,7 @@
 	opacity: 1;
 }
 #wheelErg {
-	position: fixed;
+	position: absolute;
 	width: 319px;
 	height: 389px;
 	bottom: 60px;
