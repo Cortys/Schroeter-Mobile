@@ -34,7 +34,7 @@ function pageLoad(hashStr, open) {
 				js = ((defaults['scriptLanguages'][page])?(LANGUAGE+"/"):"")+((defaults['scriptDict'][page])?defaults['scriptDict'][page]:page),
 				prel = new Image();
 			prel.onload = function() {
-				$.get("pages/"+(PHONE?"mobile":"tablet")+"/"+LANGUAGE+"/"+page+".html", { page:page, lang:LANGUAGE, phone:PHONE*1, phoneString:PHONESTRING }, function(data) {
+				$.get("file:///android_asset/webapp/content/pages/"+(PHONE?"mobile":"tablet")+"/"+LANGUAGE+"/"+page+".html", { page:page, lang:LANGUAGE, phone:PHONE*1, phoneString:PHONESTRING }, function(data) {
 					var menuReg = defaults["menuReg"],
 						menu = data.match(menuReg);
 					$("#subNav").html(menu[1]).cssFadeIn(startUp);
