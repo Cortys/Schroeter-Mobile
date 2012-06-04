@@ -46,13 +46,16 @@ function pageLoad(hashStr, open) {
 					setTimeout(function() {
 						$.ajax({
 							url: "file:///android_asset/www/js/pages/"+js+".js",
-							dataType: "script",
+							dataType: "html",
 							complete: function() {
 								if(!iTD() || (window.innerWidth > 1024 && !PHONE)) {
 									$("#topNav").css({ width:"1024px", left:"50%", marginLeft:"-512px" });
 									if($("#wheelErg").length > 0)
 										$("#wheelErg").css({ position:"absolute" });
 								}
+							},
+							success: function(data) {
+								eval(data);
 							}
 						});
 					}, 0);
