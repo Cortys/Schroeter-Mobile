@@ -12,6 +12,18 @@ jQuery.expr[':'].Contains = function(a,i,m){
 	return jQuery(a).text().toUpperCase().indexOf(m[3].toUpperCase())>=0;
 };
 
+var HASHSPLIT = "+";
+
+function getStrFromObj(o) {
+	return o?o:"";
+}	
+function getHash() {
+	return getStrFromObj(String(location.hash).split(HASHSPLIT)[1]);
+}
+function getSearch() {
+	return getStrFromObj(getStrFromObj(String(location.hash).split("#")[1]).split(HASHSPLIT)[0]);
+}
+
 //STATIC
 var START = iTD()?"touchstart":"mousedown",
 	MOVE = iTD()?"touchmove":"mousemove",
@@ -19,7 +31,7 @@ var START = iTD()?"touchstart":"mousedown",
 	pageLoading,
 	windowWidth = 0,
 	windowHeight = 0,
-	LANGUAGE = location.search?location.search.replace(/^\?/, ""):defaults.defaultLang,
+	LANGUAGE = getSearch()?getSearch():defaults.defaultLang,
 	LAST_START = $(document),
 	PHONE = iTD()*1>1,
 	PHONESTRING = PHONE?"Mobile":"";
@@ -94,7 +106,7 @@ setTimeout(function() {
 		if(!pageLoading) {
 			var newHashArr = [],
 				newHash = "",
-				aktHash = String(location.hash).split("#")[1],
+				aktHash = getHash(),
 				aktPage = aktHash.split("-");
 			aktPage = aktPage[aktPage.length-1];
 			if(page!=aktPage) {
@@ -120,7 +132,7 @@ setTimeout(function() {
 						newHash = aktHash;
 						break;
 				};
-				location.hash = newHash;
+				location.hash = getSearch()+HASHSPLIT+newHash;
 			}
 			pageLoad(page);
 		}
@@ -161,7 +173,8 @@ setTimeout(function() {
 						alert("Calling is not supported on iPods!");
 					break;
 				case "linkLang":
-					location.search = oAlt;
+					location.hash = oAlt+HASHSPLIT+getHash();
+					location.reload();
 					break;
 				case "linkWeb":
 					$("#simulatedTrigger").attr("href", oAlt);
@@ -196,12 +209,11 @@ setTimeout(function() {
 		windowHeight = window.innerHeight;
 		
 		//startup actions
-		var hashArr = String(location.hash).split("#");
-		hashArr = hashArr[hashArr.length-1].split("-");
+		var hashArr = getHash().split("-");
 		var hashStr = hashArr[hashArr.length-1];
 		hashStr = (!hashStr)?defaults.defaultPage:hashStr;
 		hashArr[hashArr.length-1] = hashStr;
-		location.hash = hashArr.join("-");
+		location.hash = LANGUAGE+HASHSPLIT+hashArr.join("-");
 		pageLoad(hashStr);
 		
 		//mods for PCs and too large devices
