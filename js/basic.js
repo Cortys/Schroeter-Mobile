@@ -15,7 +15,7 @@ jQuery.expr[':'].Contains = function(a,i,m){
 function iTD() {
 	var el = document.createElement('div');
 	el.setAttribute('ongesturestart', 'return;');
-	return (typeof el.ongesturestart == "function" || (/android/gi).test(navigator.appVersion))?(navigator.userAgent.match(/iPhone/i)?2:1):false;
+	return (typeof el.ongesturestart == "function" || (/android/gi).test(navigator.appVersion))?((navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/mobile/i))?2:1):false;
 }
 //Events for the used device
 var START = iTD()?"touchstart":"mousedown",
@@ -63,10 +63,10 @@ function pageLoad(hashStr, open) {
 				}, "html");
 				$("head .added").remove();
 				$("head").append('<link rel="stylesheet" href="css/pages'+(PHONE?"Mobile":"")+'/'+css+'.css" type="text/css" class="added">');
-				$("body").css({ backgroundImage:"url('images"+PHONESTRING+"/bgs/"+bg+"')" });
+				$("#bg").css({ backgroundImage:"url('images"+PHONESTRING+"/bgs/"+bg+"')" });
 			};
 			prel.src = 'images/bgs/'+bg;
-			$("body").css({ backgroundImage: "none" });
+			$("#bg").css({ backgroundImage: "none" });
 		}
 		did = !did;
 	});
@@ -198,8 +198,8 @@ $(document).ready(function() {
 	if(!iTD() || (windowWidth > 1024 && !PHONE)) {
 		windowWidth = 1024;
 		windowHeight = windowHeight>768?768:windowHeight;
-		$("#loadedPage,#subNav").css({ width:windowWidth, height:windowHeight, marginLeft:-(windowWidth/2), left:"50%" });
-		$("body").css({ backgroundSize:windowWidth, marginTop:"100px" });
+		$("#loadedPage,#subNav,#bg").css({ width:windowWidth, height:windowHeight, marginLeft:-(windowWidth/2), left:"50%" });
+		//$("body").css({ backgroundSize:windowWidth, marginTop:"100px" });
 	}
 	
 	if((windowWidth<windowHeight&&!PHONE)||(windowWidth>windowHeight&&PHONE))
