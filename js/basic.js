@@ -7,23 +7,33 @@ Frameworks used:
 	jQuery - iScroll - swipeJS - zFlow(very many mods here, made for this project)
 *******************************************************************************************/
 
+//jQuery extension
+jQuery.expr[':'].Contains = function(a,i,m){
+	return jQuery(a).text().toUpperCase().indexOf(m[3].toUpperCase())>=0;
+};
+
+//STATIC
+var START = iTD()?"touchstart":"mousedown",
+	MOVE = iTD()?"touchmove":"mousemove",
+	END = iTD()?"touchend":"mouseup",
+	pageLoading,
+	windowWidth = 0,
+	windowHeight = 0,
+	LANGUAGE = location.search?location.search.replace(/^\?/, ""):defaults.defaultLang,
+	LAST_START = $(document),
+	PHONE = iTD()*1>1,
+	PHONESTRING = PHONE?"Mobile":"";
+
+
+//Says if PC, Tablet or Smartphone is used
+function iTD() {
+	var el = document.createElement('div');
+	el.setAttribute('ongesturestart', 'return;');
+	return (typeof el.ongesturestart == "function" || (/android/gi).test(navigator.appVersion))?((navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/mobile/i))?2:1):false;
+}
+
 setTimeout(function() {
-	//jQuery extension
-	jQuery.expr[':'].Contains = function(a,i,m){
-		return jQuery(a).text().toUpperCase().indexOf(m[3].toUpperCase())>=0;
-	};
-	//Says if PC, Tablet or Smartphone is used
-	function iTD() {
-		var el = document.createElement('div');
-		el.setAttribute('ongesturestart', 'return;');
-		return (typeof el.ongesturestart == "function" || (/android/gi).test(navigator.appVersion))?((navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/mobile/i))?2:1):false;
-	}
-	//Events for the used device
-	var START = iTD()?"touchstart":"mousedown",
-		MOVE = iTD()?"touchmove":"mousemove",
-		END = iTD()?"touchend":"mouseup";
 	//Opens a page
-	
 	function pageLoad(hashStr, open) {
 		pageLoading = true;
 		var page = hashStr,
@@ -70,7 +80,8 @@ setTimeout(function() {
 					js = ((defaults['scriptLanguages'][page])?(LANGUAGE+"/"):"")+((defaults['scriptDict'][page])?defaults['scriptDict'][page]:page),
 					prel = new Image();
 				prel.onload = function() {
-					loadFile("file:///android_asset/www/");
+					//loadFile("file:///android_asset/www/");
+					loadFile("");
 				};
 				prel.src = 'images/bgs/'+bg;
 				$("#bg").css({ backgroundImage: "none" });
@@ -176,14 +187,6 @@ setTimeout(function() {
 			return e.parent();
 		return $(document);
 	}
-	//status variables
-	var pageLoading,
-		windowWidth = 0,
-		windowHeight = 0,
-		LANGUAGE = location.search?location.search.replace(/^\?/, ""):defaults.defaultLang,
-		LAST_START = $(document),
-		PHONE = iTD()*1>1,
-		PHONESTRING = PHONE?"Mobile":"";
 	
 	$(document).ready(function() {
 		//webapp initialisation
@@ -230,4 +233,4 @@ setTimeout(function() {
 				defaults.logoAction();
 		});
 	});
-}, 1000);
+}, 200);
