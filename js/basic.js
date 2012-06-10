@@ -22,6 +22,7 @@ var START = iTD()?"touchstart":"mousedown",
 	MOVE = iTD()?"touchmove":"mousemove",
 	END = iTD()?"touchend":"mouseup";
 //Opens a page
+
 function pageLoad(hashStr, open) {
 	pageLoading = true;
 	var page = hashStr,
@@ -29,12 +30,9 @@ function pageLoad(hashStr, open) {
 		did = false;
 	$("#loadedPage,#subNav").cssFadeOut(startUp, function() {
 		if(!did) {
-			var bg = (defaults['bgDict'][page])?defaults['bgDict'][page]:page+".jpg",
-				css = ((defaults['cssLanguages'][page])?(LANGUAGE+"/"):"")+((defaults['cssDict'][page])?defaults['cssDict'][page]:page),
-				js = ((defaults['scriptLanguages'][page])?(LANGUAGE+"/"):"")+((defaults['scriptDict'][page])?defaults['scriptDict'][page]:page),
-				prel = new Image();
-			prel.onload = function() {
-				$.get("file:///android_asset/www/pages/"+(PHONE?"mobile":"tablet")+"/"+LANGUAGE+"/"+page+".html", function(data) {
+			
+			var loadFile = function(pre) {
+				$.get(pre+"pages/"+(PHONE?"mobile":"tablet")+"/"+LANGUAGE+"/"+page+".html", function(data) {
 					var menuReg = defaults["menuReg"],
 						menu = data.match(menuReg);
 					$("#subNav").html(menu[1]).cssFadeIn(startUp);
@@ -45,7 +43,7 @@ function pageLoad(hashStr, open) {
 					$("#loadedPage").html(data).cssFadeIn(startUp);
 					setTimeout(function() {
 						$.ajax({
-							url: "file:///android_asset/www/js/pages/"+js+".js",
+							url: pre+"js/pages/"+js+".js",
 							dataType: "html",
 							complete: function() {
 								if(!iTD() || (window.innerWidth > 1024 && !PHONE)) {
@@ -64,6 +62,14 @@ function pageLoad(hashStr, open) {
 				$("head .added").remove();
 				$("head").append('<link rel="stylesheet" href="css/pages'+(PHONE?"Mobile":"")+'/'+css+'.css" type="text/css" class="added">');
 				$("#bg").css({ backgroundImage:"url('images"+PHONESTRING+"/bgs/"+bg+"')" });
+			};
+			
+			var bg = (defaults['bgDict'][page])?defaults['bgDict'][page]:page+".jpg",
+				css = ((defaults['cssLanguages'][page])?(LANGUAGE+"/"):"")+((defaults['cssDict'][page])?defaults['cssDict'][page]:page),
+				js = ((defaults['scriptLanguages'][page])?(LANGUAGE+"/"):"")+((defaults['scriptDict'][page])?defaults['scriptDict'][page]:page),
+				prel = new Image();
+			prel.onload = function() {
+				loadFile("file:///android_asset/www/");
 			};
 			prel.src = 'images/bgs/'+bg;
 			$("#bg").css({ backgroundImage: "none" });
@@ -130,7 +136,7 @@ function clickRun(e,o,d) {
 				location.href="mailto:"+oAlt;
 				break;
 			case "linkPDF":
-				$("#simulatedTrigger").attr("href", "pdfs/"+oAlt+".pdf");
+				$("#simulatedTrigger").attr("href", "http://www.schroeter-technologie.de/mobil/pdfs/"+oAlt+".pdf");
 				var a = $("#simulatedTrigger")[0];
 				var e = document.createEvent('MouseEvents');
 				e.initEvent('click', true, true);

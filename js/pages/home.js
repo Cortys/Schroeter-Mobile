@@ -3,7 +3,7 @@ $.each(defaults.languages, function(i,v) {
 	add += "<img src='images/pages/pr"+(v.toUpperCase())+".png' name='linkLang' alt='"+v+"'>";
 });
 
-// Easy! But not felxible!
+// Easy! But not flexible!
 //addd = '<a href="/schroeter3/de/"><img src="images/pages/prDE.png" name="linkLangQuick" alt="de"></a><a href="/schroeter3/en/"><img src="images/pages/prEN.png" name="linkLangQuick" alt="en"></a>';
 
 $(".lang").bind(END, function() {
