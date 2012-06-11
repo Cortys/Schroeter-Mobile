@@ -34,7 +34,8 @@ var START = iTD()?"touchstart":"mousedown",
 	LANGUAGE = getSearch()?getSearch():defaults.defaultLang,
 	LAST_START = $(document),
 	PHONE = iTD()*1>1,
-	PHONESTRING = PHONE?"Mobile":"";
+	PHONESTRING = PHONE?"Mobile":"",
+	AKTPAGE;
 
 
 //Says if PC, Tablet or Smartphone is used
@@ -46,10 +47,10 @@ function iTD() {
 
 setTimeout(function() {
 	//Opens a page
-	function pageLoad(hashStr, open) {
+	function pageLoad(page, open) {
+		AKTPAGE = page;
 		pageLoading = true;
-		var page = hashStr,
-			startUp = open?0:defaults["pageFade"],
+		var startUp = open?0:defaults["pageFade"],
 			did = false;
 		$("#loadedPage,#subNav").cssFadeOut(startUp, function() {
 			if(!did) {
@@ -174,7 +175,8 @@ setTimeout(function() {
 					break;
 				case "linkLang":
 					location.hash = oAlt+HASHSPLIT+getHash();
-					location.reload();
+					LANGUAGE = oAlt;
+					pageLoad(AKTPAGE);
 					break;
 				case "linkWeb":
 					$("#simulatedTrigger").attr("href", oAlt);
